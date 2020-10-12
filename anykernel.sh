@@ -4,7 +4,7 @@
 ## AnyKernel setup
 # begin properties
 properties() { '
-kernel.string=Sleepy kernel by Lacia-chan
+kernel.string=Sleepy kernel ~ But Paimon is emergency food (By Lacia_chan)
 do.devicecheck=1
 do.modules=0
 do.systemless=1
