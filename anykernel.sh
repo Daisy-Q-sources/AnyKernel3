@@ -34,7 +34,12 @@ set_perm_recursive 0 0 750 750 $ramdisk/init* $ramdisk/sbin;
 
 mount -o remount,rw /vendor
 
-#Add custom script
+# Check if the revvz script is present if so nuke it
+sed -i '/revvz_exec/d' /vendor/bin/init.qcom.sh
+sed -i '/revvz_exec/d' /vendor/bin/init.qcom.post_boot.sh
+rm -rf /vendor/bin/revvz_exec.sh
+
+# Check if the script is present
 is_exist_post_sh=$(grep sleepy_exec /vendor/bin/init.qcom.post_boot.sh)
 is_exist_qcom_sh=$(grep sleepy_exec /vendor/bin/init.qcom.sh)
 
